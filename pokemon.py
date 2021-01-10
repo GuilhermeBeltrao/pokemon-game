@@ -1,10 +1,18 @@
+import random
+
+
 class Pokemon:
 
     #       Constructor
-    def __init__(self, species, level=1, name=None):
+    def __init__(self, species, level=None, name=None):
         self.type = type
         self.species = species
-        self.level = level
+        
+        if level:
+            self.level = level
+        else:
+            self.level = random.randint(1, 100)
+            
         if name:
             self.name = name
         else:
