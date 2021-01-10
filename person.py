@@ -41,12 +41,14 @@ class Person:
             
     def choose_pokemon(self):
         self.show_pokemons()
+        
         if self.pokemons:
             while True:
+                choice = input('escolha seu pokemon: ')
                 try:
-                    choice = input('escolha seu pokemon: ')
-                    choice = int(choice)
-                    chosen_pokemon = self.pokemons[choice]
+                    int_choice = int(choice)
+                    chosen_pokemon = self.pokemons[int_choice]
+                    print('O pokemon {} foi escolhido.'.format(chosen_pokemon))
                     return chosen_pokemon
                 except:
                     print('escolha invalida')
@@ -57,15 +59,7 @@ class Person:
         person.show_pokemons()
         self.choose_pokemon()
         
-        while True:
-            choice = input('Escolha seu pokemon: ')
-
-            if choice == '1':
-                pass
-            elif choice == '2':
-                pass
-            elif choice == '3':
-                pass
+       
         
 class Player(Person):
     type = 'player'
